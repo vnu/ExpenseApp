@@ -9,8 +9,49 @@
     tools:context=".OverviewActivity" >
 
     <TextView
+        android:id="@+id/tvOverallAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="$1,324"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/btnExpenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvOverallAmount"
+        android:text="Expenses" />
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.cp.expenseapp.fragments.ExpenseListFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnIncome"
+        android:layout_below="@+id/btnExpenses"
+        android:layout_centerHorizontal="true"
+        tools:layout="@layout/fragments_expense_list" />
+
+    <Button
+        android:id="@+id/btnIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="Income" />
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.cp.expenseapp.fragments.IncomeListFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnIncome"
+        android:layout_centerHorizontal="true"
+        tools:layout="@layout/fragments_income_list" />
 
 </RelativeLayout>
