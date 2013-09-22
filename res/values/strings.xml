@@ -6,5 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_expense_list">ExpenseList</string>
     <string name="title_activity_expense_list_fragment">ExpenseListFragment</string>
+    <string name="sharedExpenseFriendsLabel">Share amongst</string>
+    <string name="sharedExpenseUserLabel">Include me</string>
 
 </resources>
