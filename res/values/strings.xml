@@ -6,5 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_expense_list">ExpenseList</string>
     <string name="title_activity_expense_list_fragment">ExpenseListFragment</string>
-
+    <string name="sharedExpenseHeaderLabel">Share Amongst</string>
+	<string name="sharedExpenseUserLabel">Include Me</string>
+	<string name="sharedExpenseFriendsHint">Enter your friends' email address</string>
 </resources>
