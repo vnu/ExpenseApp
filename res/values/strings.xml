@@ -7,6 +7,11 @@
     <string name="title_activity_expense_list">ExpenseList</string>
     <string name="title_activity_expense_list_fragment">ExpenseListFragment</string>
     <string name="sharedExpenseHeaderLabel">Share Amongst</string>
-	<string name="sharedExpenseUserLabel">Include Me</string>
-	<string name="sharedExpenseFriendsHint">Enter your friends' email address</string>
+    <string name="sharedExpenseUserLabel">Include Me</string>
+    <string name="sharedExpenseFriendsHint">Enter your friends\' email address</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="loginBtnLabel">Connect using Twitter</string>
+    <string name="splashScreenTitleLabel">ExpenseApp</string>
+    <string name="splashScreenSubTitleLabel">Managing expenses made easy.</string>
+
 </resources>

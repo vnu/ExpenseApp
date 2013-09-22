@@ -16,11 +16,7 @@
         <activity
             android:name="com.cp.expenseapp.OverviewActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            
         </activity>
         <activity
             android:name="com.cp.expenseapp.ExpenseList"
@@ -29,6 +25,17 @@
         <activity
             android:name="com.cp.expenseapp.ExpenseListFragment"
             android:label="@string/title_activity_expense_list_fragment" >
+        </activity>
+        <activity
+            android:name="com.cp.expenseapp.LoginActivity"
+            android:label="@string/title_activity_login" 
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
         </activity>
     </application>
 
