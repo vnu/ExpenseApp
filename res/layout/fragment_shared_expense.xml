@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tvSharedExpenseHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/sharedExpenseHeaderLabel"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <CheckBox
+        android:id="@+id/cbSharedExpenseUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvSharedExpenseHeader"
+        android:layout_marginTop="16dp"
+        android:text="@string/sharedExpenseUserLabel"
+        android:checked="true" />
+
+    <EditText
+        android:id="@+id/etParticipantsEmailId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/cbSharedExpenseUser"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="@string/sharedExpenseFriendsHint" >
+
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout>
