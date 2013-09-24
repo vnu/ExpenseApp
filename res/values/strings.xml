@@ -13,5 +13,14 @@
     <string name="loginBtnLabel">Connect using Twitter</string>
     <string name="splashScreenTitleLabel">ExpenseApp</string>
     <string name="splashScreenSubTitleLabel">Managing expenses made easy.</string>
+    <string name="value_here">Enter Value here</string>
+    <string name="amount">Amount</string>
+    <string name="account">Account</string>
+    <string name="category">Category</string>
+    <string name="sub_category">SubCategory</string>
+    <string name="date">Date</string>
+    <string name="paid_by">Paid By</string>
+    <string name="notes">Notes</string>
+    <string name="vendor">Vendor</string>
 
 </resources>
