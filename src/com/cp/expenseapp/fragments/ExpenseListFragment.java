@@ -1,27 +1,46 @@
 package com.cp.expenseapp.fragments;
 
 
+import org.json.JSONArray;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.cp.expenseapp.R;
 
-public class ExpenseListFragment extends Fragment{
+import com.cp.expenseapp.ExpenseappClient;
+import com.cp.expenseapp.R;
+import com.cp.expenseapp.models.Transaction;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+public class ExpenseListFragment extends TransactionListFragment{
 	
 	@Override
-	public View onCreateView(LayoutInflater inf, ViewGroup parent, Bundle savedInstanceState){
-		return inf.inflate(R.layout.fragments_expense_list, parent, false);
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		updateAndDisplayExpenses();
+		
 	}
 	
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState){
-		ListView lvExpenseList = (ListView) getActivity().findViewById(R.id.lvExpenseList);
+	public void updateAndDisplayExpenses() {
+		RequestParams params =new RequestParams();
+		params.put("username", "androexp1");
+		ExpenseappClient.getExpenses(params,new JsonHttpResponseHandler(){
+		
+			@Override
+			public void onSuccess(JSONArray jsonTransactions){
+				//Log.d("DEBUG", jsonTweets.toString());
+				getTransactionAdapter().clear();
+				getTransactionAdapter().addAll(Transaction.fromJson(jsonTransactions));
+			}
 
-		super.onActivityCreated(savedInstanceState);
+			
+		});
 	}
 
 }

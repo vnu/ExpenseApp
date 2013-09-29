@@ -90,9 +90,7 @@ public class AddActivity extends FragmentActivity {
 		tvToggle = (TextView) findViewById(R.id.tvToggle);
 		tvVendor = (TextView) findViewById(R.id.tvVendor);
 		rgTransaction = (RadioGroup) findViewById(R.id.rgTransaction);
-		//addMoreExpenseFragment = (getSupportFragmentManager().findFragmentById(R.layout.fragment_add_expense));
-		//addMoreIncomeFragment = (getSupportFragmentManager().findFragmentById(R.layout.fragment_add_income));
-
+		
 		
 	}
 	
@@ -152,22 +150,22 @@ public class AddActivity extends FragmentActivity {
 		params.put("category", category );
 		params.put("vendor", vendor );
 		params.put("mode", mode );
-		ExpenseappClient.postTransaction(params, new JsonHttpResponseHandler(){
-			@Override
-			public void onSuccess(JSONObject jsonTweet){
-				
-				
-				if (getParent() == null) {
-				    setResult(Activity.RESULT_OK);
-				} else {
-				    getParent().setResult(Activity.RESULT_OK);
-				}
-				finish();
-
-			}
-			
-
-		});
+//		ExpenseappClient.postTransaction(params, new JsonHttpResponseHandler(){
+//			@Override
+//			public void onSuccess(JSONObject jsonTweet){
+//				
+//				
+//				if (getParent() == null) {
+//				    setResult(Activity.RESULT_OK);
+//				} else {
+//				    getParent().setResult(Activity.RESULT_OK);
+//				}
+//				finish();
+//
+//			}
+//			
+//
+//		});
 		
 		
 	}

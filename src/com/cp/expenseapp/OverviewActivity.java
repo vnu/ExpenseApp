@@ -60,7 +60,7 @@ public class OverviewActivity extends FragmentActivity implements TabListener {
 		actionBar.addTab(tabExpense);
 		actionBar.addTab(tabIncome);
 		actionBar.addTab(tabAll);
-		actionBar.addTab(tabSharedExpense);
+		//actionBar.addTab(tabSharedExpense);
 		actionBar.selectTab(tabAll);
 
 	}
