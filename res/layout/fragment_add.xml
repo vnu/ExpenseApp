@@ -69,7 +69,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/value_here"
-            android:inputType="date" >
+            android:inputType="date" >"
         </EditText>
     </LinearLayout>
     

@@ -12,7 +12,7 @@ public class ExpenseappClient {
 	  private static AsyncHttpClient client = new AsyncHttpClient();
 	  
 	  public static void postTransaction( RequestParams params, AsyncHttpResponseHandler responseHandler) {
-		  String url = "" ;
+		  String url = "transactions.json" ;
 		  client.post(getAbsoluteUrl(url), params, responseHandler);
 	  }
 	  

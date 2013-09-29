@@ -19,6 +19,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,13 +30,7 @@ import android.widget.TextView;
 
 public class AddActivity extends FragmentActivity {
 
-	EditText etAmount ;
-	EditText etNotes ;
-	EditText etDate ;
-	EditText etAccount ;
-	EditText etCategory ;
-	EditText etVendor ;
-	EditText etMode ;
+	
 	TextView tvToggle;
 	TextView tvVendor;
 	RadioGroup rgTransaction;
@@ -53,12 +48,12 @@ public class AddActivity extends FragmentActivity {
 		
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.add, menu);
-		return true;
-	}
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// Inflate the menu; this adds items to the action bar if it is present.
+//		getMenuInflater().inflate(R.menu.add, menu);
+//		return true;
+//	}
 	
 	public void insertPrimaryFragment() {
 		FragmentManager fragmentManager = getSupportFragmentManager();
@@ -80,15 +75,10 @@ public class AddActivity extends FragmentActivity {
 	}
 	
 	public void setupViews() {
-		etAmount = (EditText) findViewById(R.id.etAmount);
-		etNotes = (EditText) findViewById(R.id.etNotes);
-		etDate = (EditText) findViewById(R.id.etDate);
-		etAccount = (EditText) findViewById(R.id.etAccount);
-		etCategory = (EditText) findViewById(R.id.etCategory);
-		etVendor = (EditText) findViewById(R.id.etVendor);
-		etMode = (EditText) findViewById(R.id.etPaymentMode);
+	
 		tvToggle = (TextView) findViewById(R.id.tvToggle);
 		tvVendor = (TextView) findViewById(R.id.tvVendor);
+		
 		rgTransaction = (RadioGroup) findViewById(R.id.rgTransaction);
 		
 		
@@ -134,41 +124,7 @@ public class AddActivity extends FragmentActivity {
 		
 	}
 	
-	public void onSubmit(View view) {
-		String amount = etAmount.getText().toString();
-		String notes = etNotes.getText().toString();
-		String date = etDate.getText().toString();
-		String account = etAccount.getText().toString();
-		String category= etCategory.getText().toString();
-		String vendor = etVendor.getText().toString();
-		String mode = etMode.getText().toString();
-		RequestParams params = new RequestParams();
-		params.put("amount", amount );
-		params.put("notes", notes );
-		params.put("date", date );
-		params.put("account", account );
-		params.put("category", category );
-		params.put("vendor", vendor );
-		params.put("mode", mode );
-//		ExpenseappClient.postTransaction(params, new JsonHttpResponseHandler(){
-//			@Override
-//			public void onSuccess(JSONObject jsonTweet){
-//				
-//				
-//				if (getParent() == null) {
-//				    setResult(Activity.RESULT_OK);
-//				} else {
-//				    getParent().setResult(Activity.RESULT_OK);
-//				}
-//				finish();
-//
-//			}
-//			
-//
-//		});
-		
-		
-	}
+
 	
 
 }

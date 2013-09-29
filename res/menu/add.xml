@@ -10,7 +10,8 @@
         android:id="@+id/transaction_submit"
         android:orderInCategory="100"
         android:showAsAction="always"
-        android:title="@string/transactionSubmit"/>
+        android:title="@string/transactionSubmit"
+        />
     
 
 </menu>
