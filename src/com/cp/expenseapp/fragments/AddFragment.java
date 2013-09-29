@@ -42,6 +42,7 @@ public class AddFragment extends Fragment {
 	String username = "androexp1";
 	RadioGroup rgTransaction;
 	TextView tvVendor;
+	TextView tvToggle;
 	MenuItem submit;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,6 +63,7 @@ public class AddFragment extends Fragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		tvVendor = (TextView) getView().findViewById(R.id.tvVendor);
+		tvToggle = (TextView) getActivity().findViewById(R.id.tvToggle);
 		rgTransaction = (RadioGroup) getActivity().findViewById(R.id.rgTransaction);
 		rgTransaction.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
 		{
@@ -97,9 +99,8 @@ public class AddFragment extends Fragment {
 		etDate = (EditText)getActivity().findViewById(R.id.etDate);
 		etAccount = (EditText)getActivity().findViewById(R.id.etAccount);
 		etVendor = (EditText)getActivity().findViewById(R.id.etVendor);
-		
-		//etEmails = (EditText)getActivity().findViewById(R.id.etEmail);
-		//etNotes = (EditText)getActivity().findViewById(R.id.etNotes);
+		etEmails = (rgTransaction.getCheckedRadioButtonId()==R.id.rbExpense) ? (EditText)getActivity().findViewById(R.id.etEmail):null ;
+		etNotes = (tvToggle.getText().toString().equals("Less")) ? (EditText)getActivity().findViewById(R.id.etNotes) : null;
 
 		
 		
@@ -117,23 +118,23 @@ public class AddFragment extends Fragment {
 		setupViews();
 		
 		String amount= etAmount.getText().toString();
-		//String notes = etNotes.getText().toString();
 		String date = etDate.getText().toString();
 		String account = etAccount.getText().toString();
 		String vendor = etVendor.getText().toString();
 		String trans_type = (rgTransaction.getCheckedRadioButtonId()==R.id.rbExpense) ? "Expense" : "Income";
-		//String emails = etEmails.getText().toString();
+		String emails = (rgTransaction.getCheckedRadioButtonId()==R.id.rbExpense && (tvToggle.getText().toString().equals("Less"))) ? etEmails.getText().toString(): null;
+		String notes = (tvToggle.getText().toString().equals("Less")) ? etNotes.getText().toString():null;
+
 		
 		RequestParams params = new RequestParams();
 		params.put("amount", amount );
-		params.put("notes", "notes" );
+		params.put("notes", notes );
 		params.put("trans_date", date );
 		params.put("account", account );
 		params.put("vendor", vendor );
 		params.put("trans_type", trans_type );
-		//params.put("username", "androexp1");
 		params.put("username", username);
-		params.put("emails", "emails");
+		params.put("emails", emails);
 		
 		ExpenseappClient.postTransaction(params, new JsonHttpResponseHandler(){
 			@Override
