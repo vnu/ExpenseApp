@@ -2,12 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    >
 
  <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/tvAmount"
@@ -31,7 +34,10 @@
  	<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp"
+        >
 
         <TextView
             android:id="@+id/tvVendor"
@@ -53,7 +59,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/tvDate"
@@ -69,14 +77,16 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/value_here"
-            android:inputType="date" >"
+            android:inputType="date" >"res/layout/fragment_add.xml"
         </EditText>
     </LinearLayout>
     
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/tvAccount"

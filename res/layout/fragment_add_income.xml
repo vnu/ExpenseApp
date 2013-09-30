@@ -6,12 +6,15 @@
 
     
 
-    <LinearLayout
+    <!--   <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp"
+        >
 
-        <TextView
+      <TextView
             android:id="@+id/tvCategory"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
@@ -26,18 +29,14 @@
             android:hint="@string/value_here" >
         </EditText>
     </LinearLayout>
-
-   
-   
-    
-    
-    
-
-    
+ -->
+     
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/tvPaymentMode"
@@ -58,7 +57,9 @@
      <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal" 
+        android:background="@drawable/round_c_border"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/tvNotes"

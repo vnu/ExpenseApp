@@ -30,6 +30,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AddFragment extends Fragment {
 	
@@ -77,14 +78,12 @@ public class AddFragment extends Fragment {
 		    						 android.support.v4.app.FragmentTransaction ftsExpense = fragmentManager.beginTransaction();
 									 ftsExpense.replace(R.id.add_more_frame_container, new AddMoreExpenseFragment());
 									 ftsExpense.commit();
-									 
 									 break;
 		    	case R.id.rbIncome:	 
 		    						 tvVendor.setText(R.string.payer);
 		    						 android.support.v4.app.FragmentTransaction ftsIncome = fragmentManager.beginTransaction();
 									 ftsIncome.replace(R.id.add_more_frame_container, new AddMoreIncomeFragment());
 									 ftsIncome.commit();
-									 
 									 break;
 		         }
 		    }
@@ -101,9 +100,6 @@ public class AddFragment extends Fragment {
 		etVendor = (EditText)getActivity().findViewById(R.id.etVendor);
 		etEmails = (rgTransaction.getCheckedRadioButtonId()==R.id.rbExpense) ? (EditText)getActivity().findViewById(R.id.etEmail):null ;
 		etNotes = (tvToggle.getText().toString().equals("Less")) ? (EditText)getActivity().findViewById(R.id.etNotes) : null;
-
-		
-		
 	}
 	
 	@Override
@@ -116,7 +112,6 @@ public class AddFragment extends Fragment {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		loadSavedPreferences();
 		setupViews();
-		
 		String amount= etAmount.getText().toString();
 		String date = etDate.getText().toString();
 		String account = etAccount.getText().toString();
@@ -138,8 +133,9 @@ public class AddFragment extends Fragment {
 		
 		ExpenseappClient.postTransaction(params, new JsonHttpResponseHandler(){
 			@Override
-			public void onSuccess(JSONArray jsonTransactions){
+			public void onSuccess(JSONObject jsonTransaction){
 				
+				Toast.makeText(getActivity(), "Transaction added", Toast.LENGTH_SHORT).show();
 				
 //				if (getParent() == null) {
 //				    setResult(Activity.RESULT_OK);
